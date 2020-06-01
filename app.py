@@ -22,7 +22,7 @@ def predict():
     prediction = int(prediction.Label[0])
     return render_template('home.html', pred="Expected Charges = {}".format(prediction))
 
-@app.route('/predict_api', method=['POST'])
+@app.route('/predict_api', methods=['POST'])
 def predict_api():
     data = request.get_json(force=True)
     data_unseen = pd.DataFrame([data])
